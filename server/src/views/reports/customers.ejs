@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A.M.E.S Report</title>
+  </head>
+  <style>
+    *,
+    *::after,
+    *::before,
+    html {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: white;
+      font-family: sans-serif;
+    }
+    header {
+      color: white;
+      padding: 1rem 1.5rem;
+      background: #fff;
+      /* background: #09a3f0; */
+      border-bottom: 10px solid white;
+    }
+    .flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .container {
+      padding: 2rem;
+      margin: auto;
+    }
+
+    /*Table*/
+    table,
+    .table {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 1rem;
+      border-collapse: collapse;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 13px;
+    }
+
+    .table thead {
+      background-color: #f7f5f5;
+    }
+
+    .table tbody tr:not(last-child) {
+      border-top: 2px solid #ccc;
+    }
+    .table tbody tr:last-child {
+      border-bottom: 2px solid #ccc;
+    }
+
+    .table th,
+    .table td {
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .table thead th {
+      vertical-align: bottom;
+      padding: 1rem 0.5rem;
+    }
+    .table tbody td {
+      vertical-align: bottom;
+      padding: 1rem 0.5rem;
+    }
+
+    .table-sm th,
+    .table-sm td {
+      padding: 0.3rem;
+    }
+
+    .table-bordered {
+      border: 1px solid #eee;
+    }
+
+    .table-bordered th,
+    .table-bordered td {
+      border: 1px solid #eceeef;
+    }
+
+    .table-bordered thead th,
+    .table-bordered thead td {
+      border-bottom-width: 2px;
+    }
+
+    .table-striped tbody tr:nth-of-type(even) {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    #report-footer {
+      padding: 20px;
+      background: #fafafa;
+      border-top: 2px solid #09a3f0;
+      margin: 0 auto;
+    }
+  </style>
+
+  <body>
+    <header class="flex">
+      <div>
+        <h1 style="color: #09a3f0">A.M.E.S Records</h1>
+        <p style="color: #09a3f0">Kasoa, Accra</p>
+        <p style="color: #09a3f0">reports@ames.com | 233 50 658 5293</p>
+      </div>
+      <img width="120" src="<%= logoSrc %>" />
+    </header>
+    <hr style="border: 0; border-bottom: 5px solid #09a3f0; margin: 2px 0" />
+
+    <main>
+      <div class="container">
+        <h2 style="padding-bottom: 1rem; text-transform: capitalize">
+          <%= title %>
+        </h2>
+
+        <table class="table table-sm table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Contact</th>
+              <th>Email</th>
+              <th>Total Cars</th>
+              <th>Date Joined</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if (records && records.length > 0) { %> <%
+            records.forEach((record) => { %>
+            <tr>
+              <td><%= record.first_name %> <%= record.last_name %></td>
+              <td><%= record.contact %></td>
+              <td><%= record.email %></td>
+              <td><%= record.cars.length %></td>
+              <td>
+                <%= new Date(record.created_at).toLocaleDateString('en-US', {
+                dateStyle: 'long' }) %>
+              </td>
+            </tr>
+            <% }) %> <% } else { %>
+            <tr>
+              <td colspan="8"><center>No records available</center></td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <footer id="report-footer">
+      <center>
+        <div class="text-grey text-center">
+          &copy; <%= new Date().getFullYear() %> . All Rights Reserved
+        </div>
+      </center>
+    </footer>
+  </body>
+</html>

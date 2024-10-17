@@ -1,0 +1,13 @@
+package-lock.json/
+system.config.js
+system_logs.log
+node_modules/
+pm2.config.js
+.vscode/
+build/
+.idea/
+temp/
+dist/
+tmp/
+.env
+uploads/
