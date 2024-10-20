@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, X, Github, Twitter, Linkedin } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import logo from "./asset/img.jpg";
 import Register from "./component/register";
 import ASG from "./asset/ASG_logo.jpg";
@@ -86,9 +86,9 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <span className="text-xl font-bold">
+              {/* <span className="text-xl font-bold">
                 <img src={ASG} alt="logo" className="h-10 w-10" />
-              </span>
+              </span> */}
             </div>
             <div className="flex space-x-4">
               <div className="mt-8 text-center text-gray-400">
@@ -96,15 +96,7 @@ function App() {
               </div>
             </div>
             <div className="flex space-x-4 mt-4 md:mt-0">
-              <a href="#" className="hover:text-gray-300">
-                <Github size={24} />
-              </a>
-              <a href="#" className="hover:text-gray-300">
-                <Twitter size={24} />
-              </a>
-              <a href="#" className="hover:text-gray-300">
-                <Linkedin size={24} />
-              </a>
+              {/* &copy; 2024 ASG. */}
             </div>
           </div>
         </div>
