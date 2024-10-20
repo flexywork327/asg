@@ -33,6 +33,7 @@ function App() {
             <div className="hidden md:flex items-center space-x-4">
               <section className="flex space-x-4 justify-between pr-5">
                 <Register />
+
                 <button
                   className="bg-[#041653] text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300"
                   onClick={handleProgramme}>
@@ -54,6 +55,7 @@ function App() {
           <div className="md:hidden">
             <section className="flex flex-col p-4 space-y-4">
               <Register />
+
               <button
                 className="bg-[#041653] text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300"
                 onClick={handleProgramme}>

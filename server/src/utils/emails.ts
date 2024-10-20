@@ -12,9 +12,8 @@ export const sendHtmlEmail = async (
     console.log(email, subject, htmlContent);
 
     const transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      service: 'gmail',
-      port: 587,
+      host: 'smtp.titan.email',
+      port: 465,
       secure: true,
       logger: true,
       tls: {
